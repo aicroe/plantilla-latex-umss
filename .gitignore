@@ -1,0 +1,19 @@
+# Generados de la compilación de latex
+*.aux
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.bbl
+*.blg
+*_latexmk
+*.gz
+
+# Imprimibles
+*.pdf
+*.dvi
+
+# Configuración de los editores
+.vscode
