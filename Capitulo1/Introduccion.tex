@@ -1,0 +1,41 @@
+\chapter{INTRODUCCIÓN} \label{cap:1}          % Anexar una etiqueta al título del capítulo hace sencillo hacer referencias a él más adelante en el documento
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\section{Objetivos}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\section{Estado del arte}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum \cite{bib01}.
+
+\section{Motivación}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum \cite{bib01}.
+
+\subsection{Insertar figura}
+
+\begin{figure}[h]                             % Insertar aquí (h=here). Latex tomará en cuenta esta configuración pero si no es posible insertarla aquí, latex buscará el mejor lugar
+  \centering                                  % Centrado
+  \includegraphics[scale=0.5]{cuadrado-azul}  % Insertar el archivo 'cuadrado-azul(.png/.jpg/...)' escalado al 50%
+  \caption[Cuadrado azul]{Cuadrado azul (Elaboración propia).} % Título de la imágen
+  \label{fig:figura01}                        % Anexar una etiqueta a la figura hace que sea fácil referenciarla después
+\end{figure}
+
+\subsection{Insertar tabla}
+
+\begin{table}[ht!]                            % Insertar forzosamente aquí o en la parte superior
+  \centering                                  % Centrado
+  \begin{tabular}{lc}                         % Dos columnas, una alineado a la izquierda (l=left) y la otra centreada (c=center)
+      \hline                                  % Línea horizontal
+      \textbf{Columna 1} & \textbf{Columna 2} \\ % Cabecer de la tabla, ambas en negrillas
+      \hline
+      1,1 & 1,2 \\
+      2,1 & 2,2 \\
+      3,1 & 3,2 \\
+      \hline
+  \end{tabular}
+  \caption{Tabla de prueba.}                  % Título de la tabla
+  \label{table:tabla01}                       % Anexar una etiqueta a la tabla hace que sea fácil referenciarla después
+\end{table}

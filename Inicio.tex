@@ -1,0 +1,214 @@
+\documentclass[
+  12pt,                       % Tamaño de letra, 12 puntos (ejemplos: 10pt,11pt,12pt)
+  letterpapper,               % Tamaño de papel. Puede ser 'a4paper' (a4), letterpaper (carta), otros
+  twoside,                    % Se dispondrán las hojas para generar un archivo imprimible en amberso y reverso. Usar 'oneside' ṕara indicar lo contrario
+  openright                   % Un capítulo siempre iniciará en una hoja de la derecha. Usar 'openany' para iniciar un capítulo en cualquier hoja
+]{book}                       % Tipo de documento, 'book' es adecuado para documentos de trabajo de grado o tesis. Otras opciones disponibles son 'report' y 'article'
+
+% Preámbulo
+
+%% Importación de paquetes
+%%% Paquetes esenciales
+
+\usepackage[utf8]{inputenc}   % Aceptar entrada de texto con codificación utf-8. https://ctan.org/pkg/inputenc
+\usepackage{hyperref}         % Paquete para manejar links de hipertexto en el documento. https://ctan.org/pkg/hyperref
+\usepackage{apacite}          % Utilizar APA para las citar la bibliografía. Las citas se manejan de forma similar a links de hipertexto. Importar después de hyperref. https://ctan.org/pkg/apacite
+\usepackage{appendix}         % Paquete que permite personalizar los anexos. Puede tener problemas con dependencias que manejan traducciones, importar antes que babel. https://ctan.org/pkg/appendix
+\usepackage[                  % Soporte para diferentes idiomas
+  spanish,                    % Seleccionar español como idioma objetivo para traducir las etiquetas
+  es-tabla                    % Importar soporte de español para tablas
+]{babel}                      % Este paquete modifica comandos de citas bibliográficas importar después de 'apacite'. https://ctan.org/pkg/babel
+\usepackage{mathptmx}         % Selecciona Times Roman como la fuente por defecto para generar el imprimible, y provee soporte básico para símbolos matemáticos. https://ctan.org/pkg/mathptmx
+\usepackage{paralist}         % Provee los ambientes para insertar listas numeradas y no numeradas. https://ctan.org/pkg/paralist
+\usepackage{fancyhdr}         % Provee facilidades para construir cabeceras y pies de página. https://ctan.org/pkg/fancyhdr
+\usepackage{geometry}         % Importa interfaz para personalizar los márgenes de página. https://ctan.org/pkg/geometry
+\usepackage{titlesec}         % Importa interfaz para personalizar el estilo de los títulos. https://ctan.org/pkg/titlesec
+\usepackage{graphicx}         % Provee comandos para añadir imágenes al documento. https://ctan.org/pkg/graphicx
+\usepackage{setspace}         % Provee comandos para configurar el espacio entre líneas de un párrafo. https://ctan.org/pkg/setspace
+\usepackage{emptypage}        % Evita que los números de página o cabeceras aparezcan en hojas vacias. https://ctan.org/pkg/emptypage
+\usepackage{chngcntr}         % Cambia la forma de enumerar una etiqueta (Por ejemplo: tablas o figuras). Define los comandos '\counterwithout' y '\coun­ter­within'. https://ctan.org/pkg/chngcntr
+
+%%% Paquetes que pueden ser añadidos según la necesidad
+
+%\usepackage{makecell}        % Permite tener celdas multilínea en tablas. https://ctan.org/pkg/makecell
+%\usepackage{amsmath}         % Importa símbolos que pueden ser usados dentro el modo matemático. https://ctan.org/pkg/amsmath
+%\usepackage[                 % Importa el ambiente 'algorithm' para definir algoritmos en cuadros flotantes
+%  ruled,                     % Apariencia del typeset del algoritmo. Puede ser: 'plain', 'boxed', 'ruled'
+%  nothing                    % Nivel al que se realizará la numeración de los algoritmos en el documento. Puede ser: 'part', 'chapter', 'section', 'subsection', 'subsubsection', 'nothing'
+%]{algorithm}                 % https://ctan.org/pkg/algorithms
+%\usepackage{algorithmic}     % Hace público comandos de algorithms con tal de personalizar el algoritmo generado
+
+%% Configuración del documento
+
+\graphicspath{                % Define rutas de donde se pueden obtener las imágenes
+  {./Capitulo1/}              % Se añaden las carpetas de todos los capítulos como rutas que pueden contener imágenes
+  {./Capitulo2/}
+  {./Capitulo3/}
+  {./Capitulo4/}
+  {./Capitulo5/}
+  {./Anexos/}
+}
+
+\geometry{
+  letterpaper,                % Tamaño del papel
+  left=3cm,                   % Margen izquierdo
+  right=2.5cm,                % Margen derecho
+  top=2.5cm,                  % Margen superior
+  bottom=2.5cm                % Margen inferior
+}
+
+\pagestyle{plain}             % Hace que el documento generado este numerado. El valor 'empty' evita que se enumeren las páginas
+
+% La numeración de tablas y figuras se realiza por capítulos por defecto.
+% Si se quiere enumerarlos de forma absoluta, es decir sin reiniciar la numeración cada capítulo, descomenta las siguientes dos líneas
+%\counterwithout{figure}{chapter}
+%\counterwithout{table}{chapter}
+
+% Las siguientes 4 líneas logran evitar que las palabras se corten automáticamente con un guión al final de una línea
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
+
+%%% Definir un nuevo ambiente donde irá el resumen del documento
+\newenvironment{abstract}
+  {
+    \null\vfill
+    \begin{center}
+      \bfseries\MakeUppercase\abstractname
+    \end{center}
+  }
+  {
+    \vfill\null
+  }
+
+%%% Modificar los títulos de cada capítulo
+\titleformat{\chapter}
+  [hang] 
+  {\normalfont\LARGE\bfseries\MakeUppercase} % Rutina que modifica el título del capítulo. 
+  {\chaptertitlename\ \thechapter}           % El título del capítulo
+  {1em}                                      % Separación horizontal entre la etiqueta y el título del capítulo
+  {}
+
+%%% A veces es necesario renombrar las etiquetas usadas por LaTeX
+
+%%%% La siguiente línea renombra el título de la bibliografía que es traducido por babel
+\addto{\captionsspanish}{\renewcommand{\bibname}{BIBLIOGRAFÍA}}
+%\addto{\captionsspanish}{\renewcommand{\figurename}{Imágen}}     % Si necesitará cambiar la etiqueta de 'Figura' des-comente esta línea
+
+%%%% Las siguientes líneas renombran el título de los anexos de la tabla de contenidos y su sección
+\renewcommand{\appendixpagename}{ANEXOS}
+\renewcommand{\appendixtocname}{ANEXOS}
+
+% Inicio del documento
+\begin{document}
+
+%% Caratula
+\begin{titlepage}
+
+  %% Reemplazar lo que se encuentra entre dos guiones (--/ reemplazar este contenido con tu situación /--)
+  \thispagestyle{empty}
+  \parbox[c]{.15\textwidth}{
+    \includegraphics[width=.15\textwidth]{umss-logo}
+  }
+  \hfill
+  \parbox[c]{.5\textwidth}{
+    \footnotesize
+    UNIVERSIDAD MAYOR DE SAN SIMÓN \\
+    FACULTAD DE CIENCIAS Y TECNOLOGÍA \\
+    CARRERA DE INGENIERÍA INFORMÁTICA
+  }
+  \hfill
+  \parbox[c]{.15\textwidth}{
+    \includegraphics[width=.15\textwidth]{fcyt-logo}
+  }
+
+  \vspace{.2\textheight}
+  \begin{center}
+    \parbox[c]{.8\textwidth}{
+      \centering\huge
+      Plantilla de \LaTeX\ para la facultad de ciencias y tecnología de la umss
+      \par
+    }
+  \end{center}
+
+  \vspace{.08\textheight}
+
+  \begin{center}
+    \Large
+    Modalidad de titulación --(reemplazar con modalidad)--
+  \end{center}
+
+  \vspace{12pt}
+
+  \begin{center}
+    \parbox[c]{.8\textwidth}{
+      \large
+      Nombre: --(Reemplazar con nombre de estudiante)- \\
+      Tutor: --(Reemplazar con nombre de tutor)-- \\
+    }
+  \end{center}
+
+  \null\vfill
+
+  {\centering\Large
+    Cochabamba - Bolivia \\
+    --(Reemplazar més y año de presentación del documento)--
+    \par
+  }
+\end{titlepage}
+
+\frontmatter    % Define la sección que está antes de la tabla de contenido. Numerado con números romanos
+
+%% Dedicatoria
+\addcontentsline{toc}{chapter}{DEDICATORIA}
+\begin{flushright}
+    \null\vspace{\stretch{1}}
+        \textit{\textbf{Dedicatoria}} \\
+        \textit{Dedicado a ...}
+    \vspace{\stretch{2}}\null
+\end{flushright}
+\cleardoublepage
+
+%% Agradecimientos
+\addcontentsline{toc}{chapter}{AGRADECIMIENTOS}
+\begin{flushright}
+    \null\vspace{\stretch{1}}
+        \textit{\textbf{Agradecimientos}} \\
+        \textit{Gracias a ...}
+    \vspace{\stretch{2}}\null
+\end{flushright}
+\cleardoublepage
+
+%% Resumen
+\onehalfspace
+\addcontentsline{toc}{chapter}{RESUMEN}
+\begin{abstract}
+    \input{Resumen}
+\end{abstract}
+
+%% Tabla de contenido
+\singlespace    % Interlineado 1.0 para las tablas de contenidos
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter     % Define la sección que contiene el contenido principal del documento. Numerado normal
+\onehalfspace   % Interlineado 1.5 para el resto del documento
+\setlength{\parskip}{6pt}
+
+% Importar los capítulos de sus carpetas. Asegúrese de no utilizar caracteres como espacios, ñ, ó (los guiones si son aceptados) cuando nombre los archivos
+\input{Capitulo1/Introduccion.tex}
+\input{Capitulo2/MarcoTeorico.tex}
+\input{Capitulo3/Metodologia.tex}
+\input{Capitulo4/DisenoEImplementacion.tex}
+\input{Capitulo5/Conclusiones.tex}
+
+\backmatter     % Define lo que va después del contenido principal (Por ejemplo: Bibliografía o Anexos)
+
+\bibliographystyle{apacite} % Listar las referencias bibliográficas en estilo APA
+\bibliography{Bibliografia} % Nombre del archivo con extensión '.bib' donde están definidas las referencias bibliográficas
+
+\input{Anexos/Anexos.tex}
+
+\end{document}
