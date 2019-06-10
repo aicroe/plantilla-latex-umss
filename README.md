@@ -85,6 +85,8 @@ La plantilla está estructurada de la siguiente manera (no ordenado por orden al
 ```
 /
 | Inicio.tex
+| Dedicatoria.tex
+| Agradecimientos.tex
 | Resumen.tex
 | Bibliografia.bib
 | Capitulo1/
