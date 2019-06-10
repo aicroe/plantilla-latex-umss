@@ -106,37 +106,37 @@
 %% Caratula
 \begin{titlepage}
 
-  %% Reemplazar lo que se encuentra entre dos guiones (--/ reemplazar este contenido con tu situación /--)
+  %% Reemplazar los valores que se encuentran entre corchetes
   \thispagestyle{empty}
-  \parbox[c]{.15\textwidth}{
-    \includegraphics[width=.15\textwidth]{umss-logo}
+  \parbox[c][.125\textheight]{.15\textwidth}{
+    \includegraphics[height=.125\textheight]{umss-logo}
   }
   \hfill
   \parbox[c]{.5\textwidth}{
-    \footnotesize
+    \small
     UNIVERSIDAD MAYOR DE SAN SIMÓN \\
     FACULTAD DE CIENCIAS Y TECNOLOGÍA \\
-    CARRERA DE INGENIERÍA INFORMÁTICA
+    CARRERA [[NOMBRE DE LA CARRERA]]
   }
   \hfill
   \parbox[c]{.15\textwidth}{
     \includegraphics[width=.15\textwidth]{fcyt-logo}
   }
 
-  \vspace{.2\textheight}
+  \vspace{.1\textheight}
   \begin{center}
     \parbox[c]{.8\textwidth}{
-      \centering\huge
-      Plantilla de \LaTeX\ para la facultad de ciencias y tecnología de la umss
+      \centering\Large
+      \textbf{[[Plantilla de \LaTeX\ para la facultad de ciencias y tecnología de la umss]]}
       \par
     }
   \end{center}
 
-  \vspace{.08\textheight}
+  \vspace{.1\textheight}
 
   \begin{center}
     \Large
-    Modalidad de titulación --(reemplazar con modalidad)--
+    [[Modalidad de Titulación]], Presentada Para Obtar al Diplóma Académico de [[Nombre de la Carrera]].
   \end{center}
 
   \vspace{12pt}
@@ -144,16 +144,16 @@
   \begin{center}
     \parbox[c]{.8\textwidth}{
       \large
-      Nombre: --(Reemplazar con nombre de estudiante)- \\
-      Tutor: --(Reemplazar con nombre de tutor)-- \\
+      \textbf{Presentado por:} [[Nombre Estudiante]] \\
+      \textbf{Tutor:} [[Nombre Tutor]] \\
     }
   \end{center}
 
-  \null\vfill
+  \null\vspace{.1\textheight}
 
   {\centering\Large
-    Cochabamba - Bolivia \\
-    --(Reemplazar més y año de presentación del documento)--
+    [[Departamento]] - Bolivia \\
+    ((Mes)), ((Año))
     \par
   }
 \end{titlepage}
@@ -165,7 +165,7 @@
 \begin{flushright}
     \null\vspace{\stretch{1}}
         \textit{\textbf{Dedicatoria}} \\
-        \textit{Dedicado a ...}
+        \input{Dedicatoria.tex}
     \vspace{\stretch{2}}\null
 \end{flushright}
 \cleardoublepage
@@ -175,7 +175,7 @@
 \begin{flushright}
     \null\vspace{\stretch{1}}
         \textit{\textbf{Agradecimientos}} \\
-        \textit{Gracias a ...}
+        \input{Agradecimientos.tex}
     \vspace{\stretch{2}}\null
 \end{flushright}
 \cleardoublepage
