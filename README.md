@@ -20,7 +20,7 @@ El lector debe tener conocimientos básicos sobre LaTeX. El objetivo de esta pla
 * [Manual de LaTeX](https://es.wikibooks.org/wiki/Manual_de_LaTeX)
 * [Usign BibTeX: a Short guide](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM)
 
-Lo segundo que uno necesita para utilizar esta plantilla es un compilador o editor de LaTeX. Si está en Windows, lo normal sería encontrar un editor que sea de su agrado. Cuando se trata de editores existen de escritorio y en línea, un editor en línea recomendado es [OverLeaf](www.overleaf.com).
+Lo segundo que uno necesita para utilizar esta plantilla es un compilador o editor de LaTeX. Si está en Windows, lo normal sería encontrar un editor que sea de su agrado. Cuando se trata de editores existen de escritorio y en línea, un editor en línea recomendado es [OverLeaf](https://www.overleaf.com/).
 
 Si se encuentra en un sistema operativo basado en unix (por ejemplo: Linux o MacOS), podría instalar el compilador de LaTeX con su administrador de paquetes designado. Refierase a los enleces de arriba para más información sobre cómo hacer esto.
 
