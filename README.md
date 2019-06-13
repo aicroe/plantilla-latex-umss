@@ -9,7 +9,7 @@ Estilos como márgenes, tamaños, fuente, interlineado u otros, que se utilizan 
 ## Contenido
 
 * [Prerrequisitos](#prerrequisitos)
-* [Compilación | Generación del imprimible](#compilación-|-generación-del-imprimible)
+* [Compilación | Generación del imprimible](#compilación--generación-del-imprimible)
 * [Cómo usar esta plantilla](#cómo-usar-esta-plantilla)
 * [Preparar el documento y los archivos fuente para su entrega en el CPD](#preparar-el-documento-y-los-archivos-fuente-para-su-entrega-en-el-cpd)
 
